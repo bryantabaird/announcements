@@ -31,7 +31,6 @@ for (var i = 0; i < pages.length; i++) {
 
     // Add the page in InDesign
     var myPage = null;
-    alert(myDocument.pages.length);
     if (firstPage) {
         myPage = myDocument.pages.item(0);
         firstPage = false;
