@@ -18,7 +18,7 @@ myDocument.viewPreferences.verticalMeasurementUnits = MeasurementUnits.INCHES;
 var myDocumentPreferences = myDocument.documentPreferences;
 myDocumentPreferences.facingPages = false;
 myDocumentPreferences.pageWidth = content["pageWidth"];
-myDocumentPreferences.pageHeight = content.["pageHeight"];
+myDocumentPreferences.pageHeight = content["pageHeight"];
 
 // Sets bleed on all edges (others follow top when documentBleedUniformSize is true)
 myDocumentPreferences.documentBleedTopOffset = content.bleedSize;
@@ -29,7 +29,7 @@ for (var i = 0; i < pages.length; i++) {
     var page = pages[i];
 
     // Add the page in InDesign
-    var myPage = null;
+    var myPage;
     if (firstPage) {
         myPage = myDocument.pages.item(0);
         firstPage = false;
@@ -47,13 +47,13 @@ for (var i = 0; i < pages.length; i++) {
     }
 
     if (page) {
-        addPageItems(myPage, page);
+        addItems(myPage, page);
     }    
 }
 
 // Help functions
 
-function addPageItems(page, content) {
+function addItems(root, content) {
     // Loop through all pageItems
     for (var contentKey in content) {
         var pageItems = content[contentKey];
@@ -64,7 +64,7 @@ function addPageItems(page, content) {
 
             // Optionally add pageItem properties to frame
             if (pageItem["properties"])
-                var frame = page[contentKey].add(pageItem["properties"]);
+                var frame = root[contentKey].add(pageItem["properties"]);
 
             // Optionally run specified methods
             if (pageItem["methods"]) {
