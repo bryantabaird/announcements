@@ -7,8 +7,9 @@ var dir = "/Users/baird/Library/Preferences/Adobe InDesign/Version 13.0/en_US/Sc
 // Add a new document
 var myDocument = app.documents.add();
 
-// Parse JSON file
-var content = getJSONFromFile(dir + "userResponses/userResponseA.json");
+// Parse JSON file and check for constants
+var jsonObject = getJSONFromFile(dir + "userResponses/userResponseA.json");
+var content = evaluateJSONObject(jsonObject);
 
 // Set measurement units to inches
 myDocument.viewPreferences.horizontalMeasurementUnits = MeasurementUnits.INCHES;
@@ -115,14 +116,9 @@ function evaluateJSONObject(obj) {
 }
 
 function getJSONFromFile(fileLocation) {
-    var fileContent = readFileContent(fileLocation)
-    return evaluateJSONObject(JSON.parse(fileContent));
-}
-
-function readFileContent(fileLocation) {
     var scriptFile = File(fileLocation);
     scriptFile.open('r');  
     var content = scriptFile.read();  
     scriptFile.close();
-    return content;
+    return JSON.parse(content);
 }

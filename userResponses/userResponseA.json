@@ -13,13 +13,8 @@
             {
                 "properties": {
                     "name": "Test",
-                    "justification": "Justification.CENTER_ALIGN"
-                }
-            },
-            {
-                "properties": {
-                    "name": "Test2",
-                    "justification": "Justification.CENTER_ALIGN"
+                    "justification": "Justification.CENTER_ALIGN",
+                    "pointSize": 16
                 }
             }
         ]
@@ -62,7 +57,12 @@
             "textFrames": [
                 {
                     "properties": {
-                        "geometricBounds": [0, 0, 2, 2],
+                        "geometricBounds": [
+                            "content.marginPreferences.top", "content.marginPreferences.left", 1, 2
+                        ],
+                        "parentStory": {
+                            "appliedParagraphStyle": "Test"
+                        },
                         "contents": "Hello"
                     }
                 }
