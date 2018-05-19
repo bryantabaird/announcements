@@ -46,9 +46,6 @@ for (var i = 0; i < pages.length; i++) {
             }
         }
 
-        // Apply page specific content
-        //app.doScript(dir + pageContent.scriptName + ".jsx", ScriptLanguage.JAVASCRIPT);
-
         if (pageContent) {
             addPageItems(page, pageContent);
         }

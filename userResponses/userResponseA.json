@@ -9,7 +9,6 @@
     "pageWidth": 5,
     "pageHeight": 7,
     "frontPage": {
-        "scriptName": "frontPage001",
         "content": {
             "rectangles": [
                 {
