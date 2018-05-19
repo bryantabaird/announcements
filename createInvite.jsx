@@ -24,31 +24,31 @@ myDocumentPreferences.pageHeight = content.pageHeight;
 // Sets bleed on all edges (others follow top when documentBleedUniformSize is true)
 myDocumentPreferences.documentBleedTopOffset = content.bleedSize;
 
-var pages = ["frontPage", "backPage"];
-
+var pages = content["pages"];
+var firstPage = true;
 for (var i = 0; i < pages.length; i++) {
-    if (content[pages[i]]) {
-        var pageContent = content[pages[i]]["content"];
+    var page = pages[i];
 
-        // Add the page in InDesign
-        var page = null;
-        if (pages[i] === "frontPage")
-            page = myDocument.pages.item(0);
-        else {
-            page = myDocument.pages.add();
-        }
+    // Add the page in InDesign
+    var myPage = null;
+    alert(myDocument.pages.length);
+    if (firstPage) {
+        myPage = myDocument.pages.item(0);
+        firstPage = false;
+    }
+    else {
+        myPage = myDocument.pages.add();
+    }
 
-        // Set margin preferences
-        if (content.marginPreferences) {
-            // Loop through top, left, right, and bottom margin lengths
-            for (var key in content.marginPreferences) {
-                page.marginPreferences[key] = content.marginPreferences[key];
-            }
-        }
-
-        if (pageContent) {
-            addPageItems(page, pageContent);
+    // Set margin preferences
+    if (content.marginPreferences) {
+        // Loop through top, left, right, and bottom margin lengths
+        for (var key in content.marginPreferences) {
+            myPage.marginPreferences[key] = content.marginPreferences[key];
         }
     }
-    
+
+    if (page) {
+        addPageItems(myPage, page);
+    }    
 }

@@ -8,8 +8,51 @@
     "bleedSize": 0.25,
     "pageWidth": 5,
     "pageHeight": 7,
-    "frontPage": {
-        "content": {
+    "pages": [
+        {
+            "rectangles": [
+                {
+                    "properties": {
+                        "geometricBounds": [0, 0, 7, 5],
+                        "strokeColor": "None",
+                        "fillColor": "None",
+                        "contentType": "ContentType.GRAPHIC_TYPE",
+                        "transparencySettings": {
+                            "blendingSettings": {
+                                "opacity": 50
+                            }
+                        }
+                    },
+                    "methods": [
+                        {
+                            "name": "place",
+                            "params": ["/Users/baird/Library/Preferences/Adobe InDesign/Version 13.0/en_US/Scripts/Scripts Panel/images/photo.jpg"]
+                        },
+                        {
+                            "name": "fit",
+                            "params": ["FitOptions.CONTENT_TO_FRAME"]
+                        },
+                        {
+                            "name": "fit",
+                            "params": ["FitOptions.FILL_PROPORTIONALLY"]
+                        },
+                        {
+                            "name": "fit",
+                            "params": ["FitOptions.CENTER_CONTENT"]
+                        }
+                    ]
+                }
+            ],
+            "textFrames": [
+                {
+                    "properties": {
+                        "geometricBounds": [0, 0, 1, 1],
+                        "contents": "Hello"
+                    }
+                }
+            ]
+        },
+        {
             "rectangles": [
                 {
                     "properties": {
@@ -52,5 +95,5 @@
                 }
             ]
         }
-    }
+    ]
 }
