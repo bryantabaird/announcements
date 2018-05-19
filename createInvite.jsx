@@ -67,8 +67,6 @@ function addItems(root, content) {
         for (var i = 0; i < pageItems.length; i++) {
             var pageItem = pageItems[i];
 
-            alert(contentKey);
-
             // Optionally add pageItem properties to frame
             if (pageItem["properties"])
                 var frame = root[contentKey].add(pageItem["properties"]);
