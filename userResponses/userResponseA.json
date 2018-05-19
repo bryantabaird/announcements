@@ -8,6 +8,22 @@
     "bleedSize": 0.25,
     "pageWidth": 5,
     "pageHeight": 7,
+    "document": {
+        "paragraphStyles": [
+            {
+                "properties": {
+                    "name": "Test",
+                    "justification": "Justification.CENTER_ALIGN"
+                }
+            },
+            {
+                "properties": {
+                    "name": "Test2",
+                    "justification": "Justification.CENTER_ALIGN"
+                }
+            }
+        ]
+    },
     "pages": [
         {
             "rectangles": [
@@ -46,7 +62,7 @@
             "textFrames": [
                 {
                     "properties": {
-                        "geometricBounds": [0, 0, 1, 1],
+                        "geometricBounds": [0, 0, 2, 2],
                         "contents": "Hello"
                     }
                 }

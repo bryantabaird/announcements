@@ -23,6 +23,9 @@ myDocumentPreferences.pageHeight = content["pageHeight"];
 // Sets bleed on all edges (others follow top when documentBleedUniformSize is true)
 myDocumentPreferences.documentBleedTopOffset = content.bleedSize;
 
+// Create paragraphStyles
+addItems(myDocument, content["document"]);
+
 var pages = content["pages"];
 var firstPage = true;
 for (var i = 0; i < pages.length; i++) {
@@ -54,6 +57,7 @@ for (var i = 0; i < pages.length; i++) {
 // Help functions
 
 function addItems(root, content) {
+
     // Loop through all pageItems
     for (var contentKey in content) {
         var pageItems = content[contentKey];
