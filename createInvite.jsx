@@ -50,9 +50,26 @@ for (var i = 0; i < pages.length; i++) {
         }
     }
 
+    // Add all content to the page
     if (page) {
         addItems(myPage, page);
-    }    
+    }
+
+    // Maximize font size to fit in frame
+    for (var j = 0; j < myPage.textFrames.count(); j++) {
+        var textFrame = myPage.textFrames.item(j);
+        if (textFrame.overflows === false) {
+            while(textFrame.overflows === false) {
+                textFrame.parentStory.pointSize += 1;
+            }
+            textFrame.parentStory.pointSize -= 1;
+        }
+        else {
+            while(textFrame.overflows) {
+                textFrame.parentStory.pointSize -= 1;
+            }
+        }
+    }
 }
 
 // Help functions

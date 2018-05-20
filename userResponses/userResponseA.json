@@ -13,8 +13,7 @@
             {
                 "properties": {
                     "name": "Test",
-                    "justification": "Justification.CENTER_ALIGN",
-                    "pointSize": 16
+                    "justification": "Justification.CENTER_ALIGN"
                 }
             }
         ]
@@ -57,11 +56,17 @@
             "textFrames": [
                 {
                     "properties": {
-                        "geometricBounds": [0, 0, 1, 2],
+                        "geometricBounds": [0, 0, 2, 5],
                         "parentStory": {
-                            "appliedParagraphStyle": "Test"
+                            "appliedParagraphStyle": "Test",
+                            "pointSize": 10,
+                            "noBreak": true
                         },
-                        "contents": "Hello"
+                        "contents": "Hello How are you",
+                        "textFramePreferences": {
+                            "verticalJustification": "VerticalJustification.CENTER_ALIGN",
+                            "insetSpacing": 0.25
+                        }
                     }
                 }
             ],
