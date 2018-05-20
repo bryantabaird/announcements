@@ -55,7 +55,7 @@ for (var i = 0; i < pages.length; i++) {
         addItems(myPage, page);
     }
 
-    // Maximize font size to fit in frame
+    // Adjust font size to fit in frame
     for (var j = 0; j < myPage.textFrames.count(); j++) {
         var textFrame = myPage.textFrames.item(j);
         if (textFrame.overflows === false) {
